@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
 
@@ -24,33 +26,33 @@ class Periodo(models.Model):
 	semestre = models.IntegerField(choices=SEMESTRES_PERMITIDOS)
 
 	# Admissoes
-	admissao_vest = models.IntegerField()
-	admissao_pas = models.IntegerField()
-	admissao_transf_obrig = models.IntegerField()
-	admissao_mudanca_curso = models.IntegerField()
-	matricula_aluno_esp = models.IntegerField()
+	admissao_vest = models.IntegerField("admissões por Vestibular")
+	admissao_pas = models.IntegerField("admissões por PAS")
+	admissao_transf_obrig = models.IntegerField("admissões por Transf. Obrigatória")
+	admissao_mudanca_curso = models.IntegerField("admissões por Mudança de Curso")
+	matricula_aluno_esp = models.IntegerField("matriculas de Alunos Especiais")
 	
 	# Desligamentos
 	formados = models.IntegerField()
-	transferencia_outras_ies = models.IntegerField()
-	desligamento_voluntario = models.IntegerField()
-	desligamento_rendimento = models.IntegerField()
-	desligamento_abandono = models.IntegerField()
-	desligamento_jubilamento = models.IntegerField()
-	falecimento = models.IntegerField()
+	transferencia_outras_ies = models.IntegerField("transferência para outras IES")
+	desligamento_voluntario = models.IntegerField("desligamento Voluntário")
+	desligamento_rendimento = models.IntegerField("desligamento por Rendimento")
+	desligamento_abandono = models.IntegerField("desligamento por Abandono")
+	desligamento_jubilamento = models.IntegerField("desligamento por Jubilamento")
+	falecimento = models.IntegerField("falecidos")
 
 	# Disciplinas
-	matriculados_disciplinas = models.IntegerField()
-	aprovados_disciplinas = models.IntegerField()
-	reprovados_disciplinas = models.IntegerField()
+	matriculas_disciplinas = models.IntegerField("matrículas em Disciplinas")
+	aprovacao_disciplinas = models.IntegerField("aprovação em Disciplinas")
+	reprovacao_disciplinas = models.IntegerField("reprovação em Discipĺinas")
 	
 	# Trancamentos
-	trancamento = models.IntegerField()
-	tracamento_justificado = models.IntegerField()
-	trancamento_geral_matr = models.IntegerField()
+	trancamento = models.IntegerField("trancamentos")
+	tracamento_justificado = models.IntegerField("tracamentos Justificados")
+	trancamento_geral_matr = models.IntegerField("trancamentos Gerais de Matrículas")
 	
 	# Extras
-	cumpriram_monitoria = models.IntegerField()
+	cumpriram_monitoria = models.IntegerField("cumpriram Monitoria")
 	
 	# Metodos
 	def __unicode__(self):
