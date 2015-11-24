@@ -56,4 +56,5 @@ class Periodo(models.Model):
 	
 	# Metodos
 	def __unicode__(self):
-		return self.question_text
+		periodo = str(self.ano)+"/"+str(self.semestre)
+		return periodo
