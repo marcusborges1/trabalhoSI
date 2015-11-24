@@ -4,15 +4,15 @@ from django.db import models
 class Periodo(models.Model):
 
 	# 2-tuplas para o widget da view
-	ANOS_PERMITIDOS = (
-		(2009, '2009'),
-		(2010, '2010'),
-		(2011, '2011'),
-		(2012, '2012'),
-		(2013, '2013'),
-		(2014, '2014'),
-		(2015, '2015'),
-	)
+	#ANOS_PERMITIDOS = (
+	#	(2009, '2009'),
+	#	(2010, '2010'),
+	#	(2011, '2011'),
+	#	(2012, '2012'),
+	#	(2013, '2013'),
+	#	(2014, '2014'),
+	#	(2015, '2015'),
+	#)
 
 	SEMESTRES_PERMITIDOS = (
 		(1, '1'),
@@ -20,7 +20,7 @@ class Periodo(models.Model):
 	)
 
 	# Periodo
-	ano = models.IntegerField(choices=ANOS_PERMITIDOS)
+	ano = models.IntegerField()
 	semestre = models.IntegerField(choices=SEMESTRES_PERMITIDOS)
 
 	# Admissoes
@@ -52,3 +52,6 @@ class Periodo(models.Model):
 	# Extras
 	cumpriram_monitoria = models.IntegerField()
 	
+	# Metodos
+	def __unicode__(self):
+		return self.question_text
