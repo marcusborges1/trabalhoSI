@@ -24,6 +24,10 @@ class Periodo(models.Model):
 	# Periodo
 	ano = models.IntegerField()
 	semestre = models.IntegerField(choices=SEMESTRES_PERMITIDOS)
+    
+	# Alunos
+	total_alunos_regulares = models.IntegerField()
+	total_alunos_ativos = models.IntegerField()
 
 	# Admissoes
 	admissao_vest = models.IntegerField("admissões por Vestibular")
