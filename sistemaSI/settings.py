@@ -26,22 +26,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -69,6 +53,24 @@ ROOT_URLCONF = 'sistemaSI.urls'
 WSGI_APPLICATION = 'sistemaSI.wsgi.application'
 
 
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -77,7 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2' , # Default: 'django.db.backends.sqlite3'
         'NAME' : 'sidb',
         'USER' : 'marcus',
-        'PASSWORD' : 'bb6i8uyo',
+ 
+       'PASSWORD' : 'bb6i8uyo',
         'HOST' : '127.0.0.1',
         'PORT' : '5432',
     }

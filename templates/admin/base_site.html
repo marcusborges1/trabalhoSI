@@ -1,1 +1,9 @@
-../../../../../../../../share/python-django-common/django/contrib/admin/templates/admin/base_site.html
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Sistema de Análise de Dados - Administração</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
