@@ -6,8 +6,10 @@ from .models import Periodo
 
 
 def index(request):
-    template = loader.get_template('periodosunb/index.html')
-    return HttpResponse(template)
+    now = "15:50"
+    html = "<html><title>Periodos UnB</title><body>It is now <strong>%s</strong>.</body></html>" % now
+    #template = loader.get_template('periodosunb/index.html')
+    return HttpResponse(html)
 
 def detail(request, periodo_id): # Teste
     return HttpResponse("You're looking at question %s." % periodo_id)
