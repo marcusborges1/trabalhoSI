@@ -65,11 +65,39 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Título</h1>
+        <h1>Periodos UnB</h1>
+        <div class="container">
+		  <h2>Engenharia da Computação:</h2>
+
+		  {% if periodos_list %}
+			  <table class="table table-striped table-hover">
+			    <thead>
+			      <tr>
+			        <th>Ano</th>
+			        <th>Semestre</th>
+			        <th>Total alunos regulares</th>
+			        <th>Total alunos ativos</th>
+			        <th>Admissões por vestibular</th>
+			      </tr>
+			    </thead>
+			    {% for periodo in periodos_list %}
+				    <tbody>
+				      <tr>
+				        <td>{{ periodo.ano }}</td>
+				        <td>{{ periodo.semestre }}</td>
+				        <td>{{ periodo.total_alunos_regulares }}</td>
+				        <td>{{ periodo.total_alunos_ativos }}</td>
+				        <td>{{ periodo.admissao_vest}}
+				      </tr>
+				    </tbody>
+				{% endfor %}
+			  </table>
+		  {% endif %}  
+		</div>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin lectus nec euismod rutrum. Duis aliquam tristique risus ut dapibus. Integer volutpat, massa sit amet vestibulum laoreet, urna ligula consequat quam, a tempus ante nunc non magna. Vestibulum et velit rhoncus, imperdiet lacus non, vestibulum mauris. Cras vitae enim a nibh dapibus pharetra. Nullam vel sagittis magna. Suspendisse diam sapien, pulvinar ut quam sed, mollis rhoncus enim.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin lectus nec euismod rutrum. Duis aliquam tristique risus ut dapibus. Integer volutpat, massa sit amet vestibulum laoreet, urna ligula consequat quam, a tempus ante nunc non magna. Quisque accumsan id lacus non venenatis. Aliquam elementum elit a mollis vulputate.</p>
         <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button"> Mostrar dados </a>
+          <a class="btn btn-lg btn-primary" href="#!" role="button"> Editar Dados </a>
         </p>
       </div>
 
