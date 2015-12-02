@@ -23,6 +23,7 @@ def graficoalunos(request):
             d.total_alunos_regulares,
             d.total_alunos_ativos])
 
+    grafico = gchart.ColumnChart(SimpleDataSource(data=chart_data), options={'title': "Alunos"})
 
     return render_to_response('graficos/graficoalunos.html', {'grafico': grafico})
 
@@ -37,6 +38,7 @@ def graficoadmissoes(request):
             d.admissao_mudanca_curso,
             d.matricula_aluno_esp])
 
+    grafico = gchart.ColumnChart(SimpleDataSource(data=chart_data), options={'title': "Admissões"})
 
     return render_to_response('graficos/graficoadmissoes.html', {'grafico': grafico})
 
@@ -53,6 +55,7 @@ def graficodesligamentos(request):
             d.desligamento_jubilamento,
             d.falecimento])
 
+    grafico = gchart.ColumnChart(SimpleDataSource(data=chart_data), options={'title': "Desligamentos"})
 
     return render_to_response('graficos/graficodesligamentos.html', {'grafico': grafico})
 
@@ -65,6 +68,7 @@ def graficodisciplinas(request):
             d.aprovacao_disciplinas,
             d.reprovacao_disciplinas])
 
+    grafico = gchart.ColumnChart(SimpleDataSource(data=chart_data), options={'title': "Disciplinas"})
 
     return render_to_response('graficos/graficodisciplinas.html', {'grafico': grafico})
 
@@ -77,5 +81,6 @@ def graficotrancamentos(request):
             d.tracamento_justificado,
             d.trancamento_geral_matr])
 
+    grafico = gchart.ColumnChart(SimpleDataSource(data=chart_data), options={'title': "Trancamentos"})
 
     return render_to_response('graficos/graficotrancamentos.html', {'grafico': grafico})
