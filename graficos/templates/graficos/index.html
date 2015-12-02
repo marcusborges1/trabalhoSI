@@ -1,0 +1,12 @@
+{% block content %}
+<select name="options" onchange="document.getElementById('iframe').src=this.options[this.selectedIndex].value">
+  <option value="">Escolha um gráfico</option>
+  <option value="graficoalunos">Alunos</option>
+  <option value="graficoadmissoes">Admissões</option>
+  <option value="graficodesligamentos">Desligamentos</option>
+  <option value="graficodisciplinas">Disciplinas</option>
+  <option value="graficotrancamentos">Trancamentos</option>
+</select>
+</br>
+<iframe id="iframe" height="100%" width="100%" frameborder="0"></iframe>
+{% endblock %}
